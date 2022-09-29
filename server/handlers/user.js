@@ -131,7 +131,7 @@ const getAllUsers = async(req, res) => {
     try {
 
         const users = await User.find();
-
+ 
         return res.status(200).send(users);
 
     } catch (err) {
@@ -140,12 +140,31 @@ const getAllUsers = async(req, res) => {
         
     }
 }
+const addteacher = async(req,res) => {
+   let body = req.body
+   const {token} = req.headers;
 
+   const decoded = jwt.verify(token, "uyfrurr67r76r7");
+
+   const user = await User.findOne({$and:[{_id:decoded._id},{type:"admin"}]});
+   if(user)
+   {
+    let data = await User(body)
+   let result = await data.save()
+   res.status(200).send(result)
+   }
+   else
+   {
+    res.status(400).send("not a admin")
+   }
+    
+}
 module.exports = {
     createUser,
     loginUser,
     isLoggedIn,
    
     getUser,
-    getAllUsers
+    getAllUsers,
+    addteacher
 }
