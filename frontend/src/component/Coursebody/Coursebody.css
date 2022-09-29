@@ -1,0 +1,35 @@
+.course_body
+{
+    width: 100%;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.course_body h1
+{
+    padding: 40px;
+    font-size: 2.5rem;
+    color: rgb(63, 61, 61);
+}
+.course_body img
+{
+    width: 60vw;
+    height: 400px;
+    margin-bottom: 50px;
+    border-radius: 0.4vw;
+}
+.course_body p
+{
+    font-size: 1.3rem;
+    width: 90vw;
+    margin: auto;
+    color: rgb(109, 106, 106);
+    word-spacing: 0.5vw;
+    line-height: 35px;
+    margin-bottom: 100px;
+}
+.course_body iframe
+{
+    margin-bottom: 100px;
+    border-radius: 0.6vw;
+
+}

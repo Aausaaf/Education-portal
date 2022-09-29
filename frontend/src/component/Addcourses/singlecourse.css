@@ -1,0 +1,104 @@
+.course
+{
+    width: 29vw;
+    height: 430px;
+    border: 0.1vh solid whitesmoke;
+    margin: auto;
+    margin-bottom: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 1.7vw;
+    overflow: hidden;
+    
+}
+.name_box
+{
+    height: 145px;
+    background-color: 
+    #6e71cc;
+    color: white;
+   
+}
+.name_box h2
+{
+   padding: 20px;
+   position: relative;
+   top: 10px;
+   font-size: 2.2rem;
+}
+.border
+{
+    height: 0.1vh ;
+    background-color: white;
+}
+.course p
+{
+    color: rgb(139, 135, 135);
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.course h5
+{
+    color: rgb(58, 56, 56);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 3px;
+    margin-left: 1.5vw;
+    
+}
+.course button
+{
+    color: blueviolet;
+    background-color: transparent;
+    border: none;
+    font-weight: 550;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.04rem;
+    margin-top: 40px;
+    margin-left: 19vw;
+    cursor: pointer;
+}
+.courselist
+{
+    display: grid;
+    width: 96vw;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 20px;
+    margin-bottom: 100px;
+   
+   
+}
+.addnewcourse
+{
+    width: 90vw;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+.addnewcourse h1
+{
+    padding: 20px;
+}
+
+.addnewcourse input
+{
+    width: 25vw;
+    height: 40px;
+    margin-bottom: 4px;
+}
+.addnewcourse button
+{
+    width: 20vw;
+    height: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.addnew
+{
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 85vw;
+    cursor: pointer;
+    width: 10vw;
+}
