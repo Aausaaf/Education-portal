@@ -25,7 +25,7 @@ const Login = (props) => {
          <select value={type}  onChange={(e)=>{
           settype(e.target.value)  
         }}>
-            
+            <option value="">Select type</option>
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
             <option value="admin">Admin</option>
@@ -40,7 +40,7 @@ const Login = (props) => {
 
           console.log(email,password)
 
-          if (email.length>10 && email.includes("@") &&password.length>=8){
+          if (email.length>10 && email.includes("@") ){
 
            axios.post("http://localhost:8080/loginUser",{
                 
@@ -67,6 +67,7 @@ const Login = (props) => {
                props.handlesignupdisplay("none")
                props.handlelogindisplay("none")
                props.handlelogoutdisplay("inline")
+               window.location.reload()
 
                 
             }

@@ -7,6 +7,7 @@ import Singlecourse from './Singlecourse'
 
 const Courselist = () => {
     const [data,setdata] = useState([])
+    const [type,settype] = useState("")
     const navigate= useNavigate()
     const getdata = () => {
         axios.get("http://localhost:8080/getcourses").then((res)=>{
@@ -18,14 +19,47 @@ const Courselist = () => {
             console.log(er)
         })
     }
+
+    const getuser = (token) => {
+
+      axios.get(`http://localhost:8080/isLoggedIn`,{
+
+          headers:{
+
+              token:token
+         
+            }
+      }).then((res)=>{
+
+          console.log(res.data)
+
+          if(res.data)
+          {
+              settype(res.data.type)
+              
+          }
+
+      }).catch((err)=>{
+          console.log(err)
+      })
+     }
+
     useEffect(()=>{
+
+      if(localStorage.getItem("token")){
+
+        getuser(localStorage.getItem('token'));
+
+      }
       getdata()
     },[])
     console.log(data)
   return (<>
-  <button className='addnew' onClick={()=>{
-    navigate(("/addcourse"))
-  }}>ADD NEW COURSE</button>
+  {
+    (type == "teacher" || type == "admin")?<button className='addnew' onClick={()=>{
+      navigate(("/addcourse"))
+    }}>ADD NEW COURSE</button> : ""
+  }
   <div className="courselist">
     {
       data.map((ele)=>{

@@ -12,6 +12,7 @@ const Navbar = () => {
     const [signuphide,setsignuphide] = useState("inline")
     const [loginhide,setloginhide] = useState("inline")
     const [logouthide,setlogouthide] = useState("none")
+    const [data,setdata] = useState("")
 const navigate  = useNavigate()
      const [username,setusername] = useState("")
        const handlesignup = (t) => {
@@ -43,13 +44,13 @@ const navigate  = useNavigate()
         setlogouthide(t)
        }
 
-       const getuser = () => {
+       const getuser = (token) => {
 
         axios.get(`http://localhost:8080/isLoggedIn`,{
 
             headers:{
 
-                token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmZmMGVkMmZhYTkxODBlNjU4NTEyMDciLCJpYXQiOjE2NjA4ODUyMDMsImV4cCI6MTY2MDk3MTYwM30.QcwBzqY8Wv5IfyCywlIAcBId-N0jXcgev9GFZXtf1CM"
+                token:token
            
               }
         }).then((res)=>{
@@ -58,7 +59,7 @@ const navigate  = useNavigate()
 
             if(res.data)
             {
-                
+                setdata(res.data)
                 setsignuphide("none")
                 setloginhide("none")
                 handleusername(res.data.name)
@@ -93,6 +94,12 @@ const navigate  = useNavigate()
          <div className="courselink" onClick={()=>{
           navigate("/courses")
         }}>Courses</div>
+        {
+          (data.type == "admin")? <div className="teacherlink" onClick={()=>{
+            navigate("/getalluser")
+            
+          }}>All Teacher</div> : ""
+        }
         <button style={{display:signuphide}} className='signup_nav'
 
         onClick={()=>{

@@ -8,10 +8,9 @@ const Signup = (props) => {
 
     const [name,setname] = useState("")
     const [email,setemail] = useState("")
-    const [type,settype] = useState("")
     const [password,setpassword] = useState()
   
-   console.log(type)
+
   return (
     <div className="signup">
         <h1>Sign Up</h1>
@@ -33,16 +32,7 @@ const Signup = (props) => {
         <input type="password" value={password} onChange={(e)=>{
             setpassword(e.target.value)  
         }} placeholder="create your password" />
-        <select value={type}  onChange={(e)=>{
-          settype(e.target.value)  
-        }}>
-            
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-            <option value="admin">Admin</option>
-
-
-        </select>
+        
 
         </div>
         <br />
@@ -64,7 +54,7 @@ const Signup = (props) => {
                 "name": name,
                 "email": email,
                 "password": password,
-                "type":type
+                "type":"student"
                
               }).then((res)=>{
 

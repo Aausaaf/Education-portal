@@ -13,6 +13,7 @@ const Singlecourse = (props) => {
         <h5> Full Time | Part Time</h5>
         <h5>Duration 6 month</h5>
         <h5>Level Beginner</h5>
+        
         <button 
         onClick={()=>{
           navigate(`/course/${props.ele.name}`)

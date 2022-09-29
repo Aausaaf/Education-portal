@@ -8,6 +8,7 @@ import Coursebody from './component/Coursebody/Coursebody';
 import Courselist from './component/Addcourses/Courselist';
 import Navbar from './component/Navbar';
 import Addnewcourses from './component/Addcourses/Addnewcourses';
+import Allteacher from './component/AllTeacher/Allteacher';
 function App() {
   return (
    <>
@@ -19,6 +20,7 @@ function App() {
     <Route path="/courses" element={<Courselist/>}/>
     <Route path='/course/:name' element={<Coursebody/>}/>
     <Route path='/addcourse' element={<Addnewcourses/>}/>
+    <Route path='/getalluser' element={<Allteacher/>}/>
   </Routes>
    </>
   );

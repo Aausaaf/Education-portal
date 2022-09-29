@@ -32,9 +32,19 @@ body
     color: white;
    position: absolute;
    top:1.3vh;
-    margin-left: 35vw;
+    margin-left: 30vw;
     cursor: pointer;
     
+}
+.teacherlink
+{
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: white;
+   position: absolute;
+   top:1.3vh;
+    margin-left: 50vw;
+    cursor: pointer;
 }
 .signup_nav
 {
