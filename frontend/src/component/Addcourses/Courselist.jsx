@@ -63,7 +63,7 @@ const Courselist = () => {
   <div className="courselist">
     {
       data.map((ele)=>{
-        return <Singlecourse ele= {ele} ></Singlecourse>
+        return <Singlecourse type={type} ele= {ele} ></Singlecourse>
       })
     }
   </div>

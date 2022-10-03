@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { useNavigate } from 'react-router'
 import "./singlecourse.css"
@@ -13,7 +14,22 @@ const Singlecourse = (props) => {
         <h5> Full Time | Part Time</h5>
         <h5>Duration 6 month</h5>
         <h5>Level Beginner</h5>
-        
+        {
+          (props.type == "teacher" || props.type == "admin")?<button
+          onClick={()=>{
+            axios.delete(`http://localhost:8080/delete/${props.ele._id}`).then((res)=>{
+              if(res.data)
+              {
+
+                alert(res.data.message)
+                window.location.reload()
+              }
+            }).catch((err)=>{
+              console.log(err)
+            })
+          }}
+          >Delete</button>:""
+        }
         <button 
         onClick={()=>{
           navigate(`/course/${props.ele.name}`)
